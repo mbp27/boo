@@ -11,6 +11,7 @@ class BooApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Boo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: const MatchingPage(),
