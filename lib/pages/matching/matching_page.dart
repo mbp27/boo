@@ -94,7 +94,12 @@ class _MatchingPageState extends State<MatchingPage> {
                   body: TabBarView(
                     controller: tabController,
                     physics: NeverScrollableScrollPhysics(),
-                    children: [NewSoulsSection(), DiscoverySection()],
+                    children: [
+                      NewSoulsSection(
+                        onAction: (like) => _scrollController.jumpTo(0),
+                      ),
+                      DiscoverySection(),
+                    ],
                   ),
                 ),
                 Positioned(

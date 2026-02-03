@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:boo/models/profile.dart';
 import 'package:boo/widgets/action_button.dart';
 import 'package:boo/widgets/interest_card.dart';
@@ -10,7 +11,9 @@ import 'package:flutter/services.dart';
 enum SwipeAction { none, like, dislike }
 
 class NewSoulsSection extends StatefulWidget {
-  const NewSoulsSection({super.key});
+  const NewSoulsSection({super.key, required this.onAction});
+
+  final void Function(bool like) onAction;
 
   @override
   State<NewSoulsSection> createState() => _NewSoulsSectionState();
@@ -98,11 +101,9 @@ class _NewSoulsSectionState extends State<NewSoulsSection>
       _direction = like ? SwipeAction.like : SwipeAction.dislike;
       _isAction = true;
     });
-    _reset();
-  }
 
-  void _reset() {
     Future.delayed(const Duration(milliseconds: 700), () {
+      widget.onAction(like);
       if (mounted) {
         _controller.forward();
       }
