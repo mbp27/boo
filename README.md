@@ -3,6 +3,7 @@
 This project replicates Boo's matching page using Flutter with placeholder data and icons.
 
 ### Features
+
 - Vertical profile scrolling
 - Like & pass actions
 - Simple animations
@@ -10,5 +11,6 @@ This project replicates Boo's matching page using Flutter with placeholder data 
 - Flutter 3.38.0
 
 ### How to run
-1. ```flutter pub get```
-2. ```flutter run```
+
+1. `flutter pub get`
+2. `flutter run`

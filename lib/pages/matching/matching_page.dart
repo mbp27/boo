@@ -47,7 +47,6 @@ class _MatchingPageState extends State<MatchingPage> {
     return Scaffold(
       body: DefaultTabController(
         length: 2,
-        initialIndex: 0,
         child: Builder(
           builder: (context) {
             final tabController = DefaultTabController.of(context);
@@ -108,19 +107,20 @@ class _MatchingPageState extends State<MatchingPage> {
                       child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                         child: Container(
+                          padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).padding.top,
+                          ),
                           color: value > 0
                               ? Colors.black.withValues(alpha: 0.1)
                               : Theme.of(context).scaffoldBackgroundColor,
                           alignment: Alignment.center,
-                          child: SafeArea(
-                            child: Text(
-                              'BOO',
-                              style: TextStyle(
-                                fontSize: 30.0,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 0,
-                                fontVariations: [FontVariation.width(50.0)],
-                              ),
+                          child: Text(
+                            'BOO',
+                            style: TextStyle(
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 0,
+                              fontVariations: [FontVariation.width(50.0)],
                             ),
                           ),
                         ),
